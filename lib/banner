@@ -1,0 +1,5 @@
+	</head>			
+	<body>
+<!--	<div id="Box"></div> -->
+	<div id="MainFullWidth">
+		<a href="[% home_url %]"><img src="[% banner_img %]" width=415px height=160px></a>

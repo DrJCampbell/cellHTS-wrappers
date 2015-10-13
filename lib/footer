@@ -1,6 +1,6 @@
 				<hr />
 				[% version_update_info %]
 			</div> <!-- end Main -->
-		</div> <!-- end Box -->
+		<!-- </div> <!-- end Box --> -->
 	</body>
 </html>

@@ -1,0 +1,288 @@
+[% INCLUDE header title = 'Add new siRNA screen' %]
+[% INCLUDE add_new_screen_header_script %]
+[% INCLUDE banner %]
+[% INCLUDE menu_rnai %]
+
+
+		<h2>Add new screen:</h2>
+		<form
+			method="post"
+			action="/cgi-bin/rnaidb_devel.pl?add_new_screen=1"
+			enctype="multipart/form-data"
+			name="addNewScreen"
+			onsubmit="return checkForm( this )">
+			<table width = 100%>
+				<tr>
+					<td align=left valign=top>
+						<p>
+							<h3>General screen information:</h3>
+						</p>
+						<p>
+							Plate excel file(s):
+							<br />
+							<input type="file" name="uploaded_excel_file" value="starting value" size="35" maxlength="256" id="xls_file" />
+							<br />
+							<input type="file" name="uploaded_excel_file2" value="starting value" size="35" maxlength="256" id="xls_file2" />
+							<br />
+							<input type="file" name="uploaded_excel_file3" value="starting value" size="35" maxlength="256" id="xls_file3" />
+							<br />
+						</p>
+						<p>
+							Plate list file:
+							<br />
+							<select name="plate_list"  id="plist_file">
+								<option selected="selected" value="Please select">Please select</option>
+								<option value="Kinome_96_validation_platelist">Kinome_96_validation_platelist</option>
+								<option value="platelist_96_2replicates">platelist_96_2replicates</option>
+								<option value="platelist_96">platelist_96</option>
+								<option value="platelist_p3r3">platelist_p3r3</option>
+								<option value="platelist_p3r3c1">platelist_p3r3c1</option>
+								<option value="platelist_p4r3">platelist_p4r3</option>
+								<option value="platelist_p7r3">platelist_p7r3</option>
+								<option value="platelist_p7r3_TKCC07">platelist_p7r3_TKCC07</option>
+								<option value="platelist_p7r3c1">platelist_p7r3c1</option>
+								<option value="platelist_p9_v1">platelist_p9_v1</option>
+								<option value="platelist_p9_v2">platelist_p9_v2</option>
+								<option value="platelist_p12_v2">platelist_p12_v2</option>
+								<option value="platelist_p15_v2">platelist_p15_v2</option>
+								<option value="ScreenSpecific">ScreenSpecific</option>
+								<option value="platelist_p6_v2">platelist_p6_v2</option>
+							</select>
+							- OR 
+							<br />
+							<a href="http://gft.icr.ac.uk/plate_list_folder_test/">View existing plate list files</a>
+							- OR
+							<br />
+							<a href =http://gft.icr.ac.uk/cgi-bin/rnaidb_devel.pl?add_new_files=1">Add new plate list file</a>
+						</p>
+						<p>
+							Template library file:
+							<br />
+							<select name="template_library"  id="tlib_file">
+								<option selected="selected" value="Please select">Please select</option>
+								<option value="Epigenetics_template">Epigenetics_template</option>
+								<option value="Kinome_96_template">Kinome_96_template</option>
+								<option value="Kinome_96_validation_template">Kinome_96_validation_template</option>
+								<option value="KS_TS_384_template_alt1">KS_TS_384_template_alt1</option>
+								<option value="KS_TS_384_template_alt2">KS_TS_384_template_alt2</option>
+								<option value="KS_TS_384_template">KS_TS_384_template</option>
+								<option value="KS_TS_384_template_SaraCav">KS_TS_384_template_SaraCav</option>
+								<option value="KS_TS_CGC_384_template">KS_TS_CGC_384_template</option>
+								<option value="KS_TS_CGC_WNT_384_template">KS_TS_CGC_WNT_384_template</option>
+								<option value="KS_TS_DR_384_template">KS_TS_DR_384_template</option>
+								<option value="KS_TS_DR_MT_PH_384_template">KS_TS_DR_MT_PH_384_template</option>
+								<option value="MET_PH_SPV384">MET_PH_SPV384</option>
+							</select>
+							- OR
+							<br />
+							<a href="http://gft.icr.ac.uk/template_library_folder_test/">View existing template library files</a>
+							- OR
+							<br />
+							<a href =http://gft.icr.ac.uk/cgi-bin/rnaidb_devel.pl?add_new_files=1"> Add new template library file</a>
+						</p>
+						<p>
+							Plate configuration file:
+							<br />
+							<select name="plate_conf"  id="pconf_file">
+								<option selected="selected" value="Please select">Please select</option>
+								<option value="Kinome_96_plateconf">Kinome_96_plateconf</option>
+								<option value="Kinome_96_validation_plateconf">Kinome_96_validation_plateconf</option>
+								<option value="KS_TS_384_plateconf1">KS_TS_384_plateconf1</option>
+								<option value="KS_TS_384_plateconf2">KS_TS_384_plateconf2</option>
+								<option value="KS_TS_384_plateconf3">KS_TS_384_plateconf3</option>
+								<option value="KS_TS_384_plateconf4">KS_TS_384_plateconf4</option>
+								<option value="KS_TS_384_plateconf5">KS_TS_384_plateconf5</option>
+								<option value="KS_TS_384_plateconf6">KS_TS_384_plateconf6</option>
+								<option value="KS_TS_384_plateconf7">KS_TS_384_plateconf7</option>
+								<option value="KS_TS_384_plateconf_SaraCav">KS_TS_384_plateconf_SaraCav</option>
+								<option value="KS_TS_CGC_384_plateconf">KS_TS_CGC_384_plateconf</option>
+								<option value="KS_TS_CGC_WNT_384_plateconf">KS_TS_CGC_WNT_384_plateconf</option>
+								<option value="KS_TS_DR_384_plateconf1">KS_TS_DR_384_plateconf1</option>
+								<option value="KS_TS_DR_384_plateconf2">KS_TS_DR_384_plateconf2</option>
+								<option value="KS_TS_DR_384_plateconf3">KS_TS_DR_384_plateconf3</option>
+								<option value="KS_TS_DR_384_plateconf4">KS_TS_DR_384_plateconf4</option>
+								<option value="KS_TS_DR_MT_PH_384_plateconf4">KS_TS_DR_MT_PH_384_plateconf4</option>
+								<option value="KS_TS_DR_MT_PH_384_plateconf5">KS_TS_DR_MT_PH_384_plateconf5</option>
+								<option value="KS_TS_DR_MT_PH_384_plateconf6">KS_TS_DR_MT_PH_384_plateconf6</option>
+								<option value="KS_TS_DR_MT_PH_384_plateconf7">KS_TS_DR_MT_PH_384_plateconf7</option>
+								<option value="KS_TS_DR_MT_PH_384_plateconf8">KS_TS_DR_MT_PH_384_plateconf8</option>
+								<option value="KS_TS_DR_MT_PH_384_plateconf9">KS_TS_DR_MT_PH_384_plateconf9</option>
+								<option value="MET_PH_SPV384_plateconf">MET_PH_SPV384_plateconf</option>
+								<option value="plateconf_EPI">plateconf_EPI</option>
+								<option value="Dummy_plateconf_file">Dummy_plateconf_file</option>
+							</select>
+							- OR
+							<br />
+							<a href="http://gft.icr.ac.uk/plate_conf_folder_test/">View existing plate configure files</a>
+							- OR
+							<br />
+							<a href =http://gft.icr.ac.uk/cgi-bin/rnaidb_devel.pl?add_new_files=1"> Add new plate configure file</a>
+						</p>
+						<p>
+							Notes about this screen:
+							<br />
+							<textarea name="notes"  rows="8" cols="40" id="NoteS" onclick="make_notes_Blank()">
+								write notes for Description.txt
+							</textarea>
+						</p>
+					</td>
+					<td align=left valign=top>
+						<p>
+							<h3>&nbsp;</h3>
+						</p>
+						Cell line name:
+						<br />
+						<input type="text" name="cell_line_name" value="Enter cell line name" size="30" maxlength="45" id="celllines" onclick="make_cellLines_Blank()" />
+					</p>
+					<p>
+						Tissue of origin:
+						<br />
+						<input type="text" name="tissue_type" value="Enter tissue type" size="30" maxlength="45" id="tissues" onclick="make_tissues_Blank()" />
+					</p>
+					<p>
+					</p>
+					<p>
+						Date of screen:
+						<br />
+						<input type="text" name="date_of_run" value="2015-10-13" size="30" maxlength="45" />
+					</p>
+					<p>
+						Operator:
+						<br />
+						<input type="text" name="operator"  size="30" maxlength="45" id="OperatoR" />
+					</p>
+					<p>
+						Collaborator:
+						<br />
+						<input type="text" name="collaborator" value="Enter name of collaborator" size="30" maxlength="45" id="CollaboratoR" onclick="make_collab_Blank()" />
+					</p>
+					<p>
+						Transfection reagent:
+						<br/>
+						<select name="transfection_reagent"  id="reagent">
+							<option selected="selected" value="Please select">Please select</option>
+							<option value="Lipofectamine 2000">Lipofectamine 2000</option>
+							<option value="Lipofectamine 3000">Lipofectamine 3000</option>
+							<option value="Lipofectamine RNAi max">Lipofectamine RNAi max</option>
+							<option value="Dharmafect 3">Dharmafect 3</option>
+							<option value="Dharmafect 4">Dharmafect 4</option>
+							<option value="Oligofectamine">Oligofectamine</option>
+							<option value="Effectene">Effectene</option>
+						</select>
+					</p>
+					<p>
+						No. of cells per well:
+						<br />
+						<input type="text" name="cells_per_well" value="Enter cell number" size="30" maxlength="45" onclick="make_cellsPerWell_Blank()" id="CellsperwelL" />
+					</p>
+					<p>
+						Instrument:
+						<br />
+						<select name="instrument"  id="InstrumenT">
+							<option selected="selected" value="Please select">Please select</option>
+							<option value="1S10">1S10</option>
+							<option value="1C11">1C11</option>
+						</select>
+					</p>
+					<p>
+						Length of assay:
+						<br />
+						<input type="text" name="length_of_assay" value="Enter length of assay" size="30" maxlength="45" id="LengthofassaY" onclick="make_lengthOfAssay_Blank()" />
+					</p>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</p>
+					<p>
+						<h3>Analyse and save results:</h3>
+						<br />
+						<input type="submit" id="save_new_screen" value="Analyse and save results" name="save_new_screen" />
+					</p>
+				</td>
+				<td align=left valign=top>
+					<p>
+						<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+					</p>
+				</td>
+				<td align=left valign=top>
+					<p>
+						<h3>Isogenic screens:</h3>
+					</p>
+					<p>
+						<label>
+							<input type="checkbox" name="is_isogenic" value="ON" onclick="enableText()" />this is an isogenic screen
+						</label>
+					</p>
+					<p>
+						Modified gene name:
+						<br />
+						<input type="text" name="gene_name_if_isogenic" value="Enter gene name" size="30" maxlength="45" disabled id="geneName" onclick="make_geneName_Blank()" />
+					</p>
+					<p>
+						Select isogenic set:
+						<br />
+						<select name="isogenicSet"  disabled>
+							<option selected="selected" value="Please select">Please select</option>
+							<option value="ARID1A-set">ARID1A-set</option>
+							<option value="CDH1-set">CDH1-set</option>
+							<option value="KRAS-set">KRAS-set</option>
+							<option value="MLH1-set">MLH1-set</option>
+							<option value="MSH-set">MSH-set</option>
+							<option value="PTEN-set">PTEN-set</option>
+							<option value="RB1-set">RB1-set</option>
+							<option value="TP53-set">TP53-set</option>
+						</select>
+						- OR
+						Enter isogenic set:
+						<br />
+						<input type="text" name="name_of_set_if_isogenic" value="Enter isogenic set name" size="30" maxlength="45" id="isogenic_Set" onclick="make_isogenic_Set_Blank()" disabled />
+					</p>
+					<p>
+						Isogenic description:
+						<br />
+						<input type="text" name="isogenic_mutant_description" value="e.g. parental" size="30" maxlength="45" onclick="make_isogenicDescription_Blank()" id="isogenicDescription" disabled />
+					</p>
+					<p>
+						Method of isogenic mutation:
+						<br />
+						<input type="text" name="method_of_isogenic_knockdown" value="e.g. ZFN or shRNA" size="30" maxlength="45" onclick="make_isogenicKnockdown_Blank()" id="isogenicKnockdown" disabled />
+					</p>
+				</td>
+				<td align=left valign=top>
+					<p>
+						<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+					</p>
+				</td>
+				<td align=left valign=top>
+					<p>
+						<h3>Drug screens:</h3>
+					</p>
+					<p>
+						<label>
+							<input type="checkbox" name="is_drug_screen" value="ON" onclick="enableText_DS()" />
+							this is a drug screen
+						</label>
+					</p>
+					<p>
+						Compound:
+						<br />
+						<input type="text" name="compound" value="e.g. drug A" size="30" maxlength="45" onclick="make_compound_Blank()" id="CompounD" disabled />
+					</p>
+					<p>
+						Concentration:
+						<br />
+						<input type="text" name="concentration" value="e.g. 100 ng" size="30" maxlength="45" disabled id="ConcentratioN" onclick="make_concentration_Blank()" />
+					</p>
+					<p>
+						Dosing regime:
+						<br />
+						<input type="text" name="dosing_regime" value="e.g. 24 hrs after transfection" size="30" maxlength="45" id="dosingRegime" onclick="make_dosingregime_Blank()" disabled />
+					</p>
+				</td>
+				<div>
+					<input type="hidden" name=".cgifields" value="is_drug_screen"  />
+					<input type="hidden" name=".cgifields" value="is_isogenic"  />
+				</div>
+			</table>
+		</form>
+
+[% INCLUDE footer %]
