@@ -25,7 +25,20 @@ change this to refresh every 20 seconds or so until a complete state is found ($
 Can use this same code/template for showing all screens, a subset or a sorted set. Include CGI params to define search and sort behaviour
 
 
-### testing github pull request functionality. Comment added on DJC forked repo
+## templates needed
+These should be saved under ./lib
+* header
+* menu_rnai
+* menu_drugs
+* submit_screen_rnai
+* submit_screen_drugs
+* footer
+* process_screen_working
+* process_screen_done
+* show_screens
+* edit_screen
+* show_qc_rnai
+* show_qc_drugs
 
 
 
