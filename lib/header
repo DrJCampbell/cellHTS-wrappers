@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+  		<title>Gene Function Team [% script_name %]</title>
+  		<link rel="stylesheet" type="text/css" media="screen"  href="[% css_url %]" />
+		<meta name="viewport" content="width=1000, initial-scale=0.5, minimum-scale=0.45" />
+	</head>
+	<body>
+		<div id="Box"></div>
+			<div id="MainFullWidth">
+				&nbsp;&nbsp;<a href="[% home_url %]"><img src="[% banner_img %]" width=415px height=160px></a>

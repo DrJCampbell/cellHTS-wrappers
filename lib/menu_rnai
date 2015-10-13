@@ -1,0 +1,5 @@
+			<p>
+				<a href="/cgi-bin/[% script_name %]?add_new_screen=1">Add new screen</a>&nbsp;&nbsp;
+				<a href="/cgi-bin/[% script_name %]?show_all_screens=1">Show all screens</a>&nbsp;&nbsp;
+				<a href="/cgi-bin/[% script_name %]?configure_export=1">Configure export</a>&nbsp;&nbsp;
+			</p>
